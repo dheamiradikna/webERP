@@ -1,0 +1,175 @@
+﻿<%@ Master Language="VB" CodeFile="parent.master.vb" Inherits="wf_parent" %>
+
+
+    <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+    <%@ Register Src="~/wc/parentHeader.ascx" TagName="parentHeader" TagPrefix="parentHeader" %>
+    <%@ Register Src="~/wc/parentFooter.ascx" TagName="parentFooter" TagPrefix="parentFooter" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-language" content="id" />
+    <asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+    
+    <style>
+
+        .single-footer-widget .logo img {
+           max-width: 200px;
+        }
+
+       /* .mobile-logo {
+           max-width: 80px;
+           height: 80px;
+           margin-top: -20px;
+        }*/
+
+        .images {
+            width:100%;
+        }
+
+        .blog-card{
+            margin-left:15px;
+        }
+
+        .title-blog{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+
+        }
+
+        .li-custom {
+            width:20% !important;
+            margin-right : 0px;
+            padding:0px;
+            margin-left:0px
+        }
+
+        .thumb-img {
+            padding: 35px 75px 35px 75px;
+        }
+
+        .property-content{
+            margin-top: -45px;
+        }
+
+        @media only screen and (max-width: 600px) {
+          .li-custom {
+              width:100% !important;
+              margin-right : 0px;
+              padding:0px;
+              margin-left:0px;
+              padding: 1em;
+              border: 1px solid #00000052;
+           }
+       }
+
+        /* Styles for laptops with a width between 601 and 1024 pixels */
+         @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            .li-custom {
+               width:20% !important;
+               margin-right : 0px;
+               padding:0px;
+               margin-left:0px
+            }      
+         }
+
+         @media only screen and (max-width: 991px) {
+             .mean-container .mean-bar {
+                background-color: #e88d15 !important;
+             }
+         }
+
+         @media only screen and (min-width: 1025px) {
+             .li-custom {
+                width:20% !important;
+                margin-right : 0px;
+                padding:0px;
+                margin-left:0px
+             }
+             .room-details-tab .tabs li {
+                 margin-right: 10px !important;
+             }
+
+             .room-details-tab .tabs li a {
+                 font-size: 13px !important;
+             }
+
+         }
+
+         
+    <%--start-modal-requestcall--%>
+ 
+    .star-red {
+        color:red;
+    }
+    .input-title {
+        font-size:14px;
+    }
+    .invalid-tooltip{
+        color:#b53838;
+        text-transform:unset;
+        font-size:12px;
+        top:-25px;
+    }
+    .mb-10{
+        margin-bottom:10px;        
+    }
+    .mb-20{
+        margin-bottom:20px;        
+    }
+    .mb-30{
+        margin-bottom:30px;        
+    }
+    .modal-backdrop.in {
+        opacity: 0;
+    }
+    .modal-backdrop {
+        z-index:0;
+    }
+
+    <%--end-modal-requestcall--%>
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <asp:ToolkitScriptManager ID="SMMain" runat="server" ScriptMode="Release"></asp:ToolkitScriptManager>
+         <parentHeader:parentHeader ID="MainheaderUC" runat="server" />
+         <asp:ContentPlaceHolder id="topSection" runat="server"></asp:ContentPlaceHolder>
+         <asp:Literal runat="server" ID="ltrHome"></asp:Literal>
+         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder runat="server" ID="mainSection"></asp:ContentPlaceHolder>
+         <parentFooter:parentFooter ID="footerUC" runat="server" />
+    </div>
+    </form>
+
+    <script type="image/png" src="<%=rootPath%>Support/img/favicon.png"></script>
+    <script type="text/javascript" src="<%=rootPath%>Support/js/jquery.min.js"></script>   
+    <script type="text/javascript" src="<%=rootPath%>Support/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="<%=rootPath%>Support/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<%=rootPath%>Support/js/carousel-thumbs.js"></script>
+    <script type="text/javascript" src="<%=rootPath%>Support/js/meanmenu.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>Support/js/jquery.magnific-popup.min.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/wow.min.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/jquery.nice-select.min.js" ></script>  
+    <script type="text/javascript" src="<%=rootPath%>support/js/jquery.ajaxchimp.min.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/form-validator.min.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/contact-form-script.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/custom.js" ></script>
+    <script type="text/javascript" src="<%=rootPath%>support/js/lazyload.min.js" ></script>
+
+    <script type="text/javascript">
+    function doPopupRequestCall2() {
+        $("#myModalRequestCall2").modal('show');
+    }
+    </script>
+</body>
+</html>
